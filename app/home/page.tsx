@@ -63,7 +63,6 @@ const templates = [
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation handled in app layout via components/nav.tsx */}
 
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 md:py-32">
@@ -150,42 +149,7 @@ export default function HomePage() {
             </motion.div>
           </div>
 
-          {/* Interactive Preview */}
-          <motion.div
-            className="mt-20 relative"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-          >
-            <Card className="p-8 md:p-12 bg-card/50 backdrop-blur-sm border-2 border-border shadow-2xl rotate-[-1deg]">
-              <div className="aspect-video bg-gradient-to-br from-[#4ECDC4]/20 via-[#FFD93D]/20 to-[#FF6B6B]/20 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                {/* Simulated floor planner preview */}
-                <div className="grid grid-cols-4 grid-rows-3 gap-2 w-3/4 h-3/4">
-                  {[...Array(12)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="bg-white/40 backdrop-blur-sm rounded-lg border-2 border-dashed border-foreground/20"
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 1 + i * 0.05 }}
-                      whileHover={{
-                        scale: 1.05,
-                        backgroundColor: "rgba(255,255,255,0.6)",
-                      }}
-                    />
-                  ))}
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <Grid3x3 className="h-16 w-16 mx-auto mb-4 text-primary" />
-                    <p className="text-2xl font-bold text-foreground">
-                      {"Drag. Drop. Design."}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </motion.div>
+
         </div>
       </section>
 
@@ -226,52 +190,6 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Templates Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-black mb-4">
-              {"Pre-made "}
-              <span className="text-primary rotate-[2deg] inline-block">
-                {"Templates"}
-              </span>
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              {"Start with a template and customize to your needs"}
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {templates.map((template, index) => (
-              <motion.div
-                key={template.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="p-8 text-center hover:shadow-xl transition-all hover:-translate-y-2 cursor-pointer bg-card border-2 border-border">
-                  <div className="text-6xl mb-4">{template.image}</div>
-                  <h3 className="text-2xl font-bold mb-2">{template.name}</h3>
-                  <p className="text-muted-foreground mb-4">{template.rooms}</p>
-                  <Button
-                    variant="outline"
-                    className="w-full rounded-full bg-transparent"
-                  >
-                    {"Use Template"}
-                  </Button>
                 </Card>
               </motion.div>
             ))}
