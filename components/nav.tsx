@@ -26,30 +26,78 @@ export default function Nav() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          <Link
-            href="/products"
-            className="text-foreground hover:text-primary transition-colors font-medium"
-          >
-            {"Products"}
-          </Link>
-          <Link
-            href="/planner"
-            className="text-foreground hover:text-primary transition-colors font-medium"
-          >
-            {"Floor Planner"}
-          </Link>
-          <Link
-            href="/services"
-            className="text-foreground hover:text-primary transition-colors font-medium"
-          >
-            {"Services"}
-          </Link>
-          <Link
-            href="/contact"
-            className="text-foreground hover:text-primary transition-colors font-medium"
-          >
-            {"Contact"}
-          </Link>
+          <motion.div whileHover="hover">
+            <Link
+              href="/products"
+              className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1 relative"
+            >
+              <motion.img
+                src="/Logo/Artboard-38work-n-share.png"
+                alt="logo"
+                className="w-4 h-4 absolute -left-6"
+                initial={{ x: 20, opacity: 0 }}
+                variants={{
+                  hover: { x: 0, opacity: 1 },
+                }}
+                transition={{ duration: 0.3 }}
+              />
+              {"Products"}
+            </Link>
+          </motion.div>
+          <motion.div whileHover="hover">
+            <Link
+              href="/planner"
+              className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1 relative"
+            >
+              <motion.img
+                src="/Logo/Artboard-38work-n-share.png"
+                alt="logo"
+                className="w-4 h-4 absolute -left-6"
+                initial={{ x: 20, opacity: 0 }}
+                variants={{
+                  hover: { x: 0, opacity: 1 },
+                }}
+                transition={{ duration: 0.3 }}
+              />
+              {"Floor Planner"}
+            </Link>
+          </motion.div>
+          <motion.div whileHover="hover">
+            <Link
+              href="/services"
+              className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1 relative"
+            >
+              <motion.img
+                src="/Logo/Artboard-38work-n-share.png"
+                alt="logo"
+                className="w-4 h-4 absolute -left-6"
+                initial={{ x: 20, opacity: 0 }}
+                variants={{
+                  hover: { x: 0, opacity: 1 },
+                }}
+                transition={{ duration: 0.3 }}
+              />
+              {"Services"}
+            </Link>
+          </motion.div>
+          <motion.div whileHover="hover">
+            <Link
+              href="/contact"
+              className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1 relative"
+            >
+              <motion.img
+                src="/Logo/Artboard-38work-n-share.png"
+                alt="logo"
+                className="w-4 h-4 absolute -left-6"
+                initial={{ x: 20, opacity: 0 }}
+                variants={{
+                  hover: { x: 0, opacity: 1 },
+                }}
+                transition={{ duration: 0.3 }}
+              />
+              {"Contact"}
+            </Link>
+          </motion.div>
         </div>
 
         <Link href="/planner">
