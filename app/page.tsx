@@ -6,16 +6,16 @@ import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 
 const puzzlePieces = [
-  { id: 1, letter: 'W', color: 'bg-[#FF6B6B]', position: { x: 0, y: 0 } },
-  { id: 2, letter: 'O', color: 'bg-[#4ECDC4]', position: { x: 1, y: 0 } },
-  { id: 3, letter: 'R', color: 'bg-[#FFD93D]', position: { x: 2, y: 0 } },
-  { id: 4, letter: 'K', color: 'bg-[#95E1D3]', position: { x: 3, y: 0 } },
-  { id: 5, letter: 'N', color: 'bg-[#F38181]', position: { x: 0, y: 1 }, rotated: true },
-  { id: 6, letter: 'S', color: 'bg-[#AA96DA]', position: { x: 1, y: 1 } },
-  { id: 7, letter: 'H', color: 'bg-[#FCBAD3]', position: { x: 2, y: 1 } },
-  { id: 8, letter: 'A', color: 'bg-[#A8E6CF]', position: { x: 3, y: 1 } },
-  { id: 9, letter: 'R', color: 'bg-[#FFD93D]', position: { x: 4, y: 1 } },
-  { id: 10, letter: 'E', color: 'bg-[#4ECDC4]', position: { x: 5, y: 1 } },
+  { id: 1, letter: 'W', color: 'bg-[#2261A6]', position: { x: 0, y: 0 } },
+  { id: 2, letter: 'O', color: 'bg-[#2261A6]', position: { x: 1, y: 0 } },
+  { id: 3, letter: 'R', color: 'bg-[#2261A6]', position: { x: 2, y: 0 } },
+  { id: 4, letter: 'K', color: 'bg-[#2261A6]', position: { x: 3, y: 0 } },
+  { id: 5, letter: 'N', color: 'bg-[#2261A6]', position: { x: 0, y: 1 }, rotated: true },
+  { id: 6, letter: 'S', color: 'bg-[#2261A6]', position: { x: 1, y: 1 } },
+  { id: 7, letter: 'H', color: 'bg-[#2261A6]', position: { x: 2, y: 1 } },
+  { id: 8, letter: 'A', color: 'bg-[#2261A6]', position: { x: 3, y: 1 } },
+  { id: 9, letter: 'R', color: 'bg-[#2261A6]', position: { x: 4, y: 1 } },
+  { id: 10, letter: 'E', color: 'bg-[#2261A6]', position: { x: 5, y: 1 } },
 ]
 
 export default function PuzzleEntrance() {

@@ -19,7 +19,7 @@ export default function Nav() {
           className="flex items-center gap-1 text-2xl font-bold text-foreground"
         >
           <img
-            src="https://worknshare.ma/wp-content/uploads/2022/09/WORKSHARE_-_LOGO_HD-1-removebg-preview.png"
+            src="/logo/Artboard-37-copywork-n-share.png"
             alt="WORKNSHARE logo"
             className="w-52"
           />
