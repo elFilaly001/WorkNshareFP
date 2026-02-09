@@ -21,7 +21,13 @@ const puzzlePieces = [
   { id: 6, letter: "S", color: "bg-[#2261A6]", position: { x: 1, y: 1 } },
   { id: 7, letter: "H", color: "bg-[#2261A6]", position: { x: 2, y: 1 } },
   { id: 8, letter: "A", color: "bg-[#2261A6]", position: { x: 3, y: 1 } },
-  { id: 9, letter: "R", color: "bg-[#2261A6]", position: { x: 4, y: 1 } },
+  {
+    id: 9,
+    letter: "R",
+    color: "bg-[#2261A6]",
+    position: { x: 4, y: 1 },
+    variant: "R2",
+  },
   { id: 10, letter: "E", color: "bg-[#2261A6]", position: { x: 5, y: 1 } },
 ];
 
@@ -61,10 +67,15 @@ export default function PuzzleEntrance() {
       setShuffledPieces(newPieces);
       setSelectedPieces([]);
 
-      // Check if solved
-      const solved = newPieces.every(
-        (piece, index) => piece.id === puzzlePieces[index].id,
-      );
+      // Check if solved - letters must match positions
+      const solved = newPieces.every((piece, index) => {
+        const expectedPiece = puzzlePieces[index];
+        // For the R positions (index 2 and 8), accept either R
+        if (expectedPiece.letter === "R" && piece.letter === "R") {
+          return true;
+        }
+        return piece.id === expectedPiece.id;
+      });
       if (solved) {
         setTimeout(() => setIsSolved(true), 500);
       }
@@ -179,7 +190,14 @@ export default function PuzzleEntrance() {
                             className="w-16 h-16 md:w-20 md:h-20 object-contain"
                           />
                         ) : (
-                          piece.letter
+                          <>
+                            {piece.letter}
+                            {piece.variant === "R2" && (
+                              <span className="absolute bottom-1 right-1 text-xs">
+                                ₂
+                              </span>
+                            )}
+                          </>
                         )}
                       </motion.button>
                     ))}
@@ -207,16 +225,17 @@ export default function PuzzleEntrance() {
                   initial={{ rotate: -10 }}
                   animate={{ rotate: 0 }}
                   transition={{ duration: 0.5 }}
+                  className="flex justify-center"
                 >
                   <h1
-                    className="text-6xl md:text-8xl font-black mb-6"
+                    className="text-6xl md:text-7xl font-black mb-6 flex items-center justify-center flex-wrap"
                     style={{ fontFamily: "Neuropolitical, sans-serif" }}
                   >
-                    <span className="inline-block text-[#FF6B6B]">{"W"}</span>
-                    <span className="inline-block text-[#4ECDC4]">{"O"}</span>
-                    <span className="inline-block text-[#FFD93D]">{"R"}</span>
-                    <span className="inline-block text-[#95E1D3]">{"K"}</span>
-                    <span className="inline-block text-[#F38181] rotate-45 mx-2 flex items-center justify-center">
+                    <span className="inline-block text-[#092556]">{"W"}</span>
+                    <span className="inline-block text-[#092556]">{"O"}</span>
+                    <span className="inline-block text-[#092556]">{"R"}</span>
+                    <span className="inline-block text-[#092556]">{"K"}</span>
+                    <span className="inline-block rotate-45 mx-2 flex items-center justify-center">
                       <Image
                         src="/Logo/Artboard-38work-n-share.png"
                         alt="N"
@@ -225,11 +244,11 @@ export default function PuzzleEntrance() {
                         className="w-24 h-24 md:w-32 md:h-32 object-contain"
                       />
                     </span>
-                    <span className="inline-block text-[#AA96DA]">{"S"}</span>
-                    <span className="inline-block text-[#FCBAD3]">{"H"}</span>
-                    <span className="inline-block text-[#A8E6CF]">{"A"}</span>
-                    <span className="inline-block text-[#FFD93D]">{"R"}</span>
-                    <span className="inline-block text-[#4ECDC4]">{"E"}</span>
+                    <span className="inline-block text-[#092556]">{"S"}</span>
+                    <span className="inline-block text-[#092556]">{"H"}</span>
+                    <span className="inline-block text-[#092556]">{"A"}</span>
+                    <span className="inline-block text-[#092556]">{"R"}</span>
+                    <span className="inline-block text-[#092556]">{"E"}</span>
                   </h1>
                 </motion.div>
 
