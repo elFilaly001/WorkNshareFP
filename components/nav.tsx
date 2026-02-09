@@ -19,7 +19,7 @@ export default function Nav() {
           className="flex items-center gap-1 text-2xl font-bold text-foreground"
         >
           <img
-            src="/logo/Artboard-37-copywork-n-share.png"
+            src="/Logo/Artboard-37-copywork-n-share.png"
             alt="WORKNSHARE logo"
             className="w-52"
           />
